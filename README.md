@@ -19,26 +19,23 @@ npm run cy:run
 ******** Cenários de Testes em BDD
 
 Cenário: Login válido
-Dado que estou na página de login
-Quando eu informo email e senha 
-E clico em entrar
-Então devo ver a dashboard autenticada
-E devo ver a mensagem "Bem-vindo"
 
-___
+  Given que estou na página de login
+  When eu informo email e senha
+  And clico em entrar
+  Then devo ver a dashboard autenticada
+  And devo ver a mensagem "Bem-vindo"
 
 Cenário: Login com senha inválida
-Dado que estou na página de login
-Quando eu informo email  e senha 
-E clico em entrar
-Então devo ver a mensagem de erro "E-mail ou senha incorretos"
-
-
-___
+  Given que estou na página de login
+  When eu informo email e senha
+  And clico em entrar
+  Then devo ver a mensagem de erro "E-mail ou senha incorretos"
 
 Cenário: Campos obrigatórios
-Dado que estou na página de login
-Quando eu clico em entrar sem preencher os campos
-Então devo ver as mensagens de obrigatoriedade para email e senha
+  Given que estou na página de login
+  When eu clico em entrar sem preencher os campos
+  Then devo ver as mensagens de obrigatoriedade para email e senha
+
 
 
