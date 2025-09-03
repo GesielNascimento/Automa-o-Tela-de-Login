@@ -16,7 +16,7 @@ npm run cy:open
 npm run cy:run
 
 
-- Cenários de Testes em BDD
+******** Cenários de Testes em BDD
 
 Cenário: Login válido
 Dado que estou na página de login
