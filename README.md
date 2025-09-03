@@ -20,11 +20,11 @@ npm run cy:run
 
 Cenário: Login válido
 
-  Given que estou na página de login
-  When eu informo email e senha
-  And clico em entrar
-  Then devo ver a dashboard autenticada
-  And devo ver a mensagem "Bem-vindo"
+  *Given que estou na página de login
+  *When eu informo email e senha
+  *And clico em entrar
+  *Then devo ver a dashboard autenticada
+  *And devo ver a mensagem "Bem-vindo"
 
 Cenário: Login com senha inválida
   Given que estou na página de login
