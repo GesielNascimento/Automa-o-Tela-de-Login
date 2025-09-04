@@ -2,11 +2,11 @@
 
 Projeto de automação E2E com **Cypress** para validar cenários de **Login** usando o site público [saucedemo](https://www.saucedemo.com/).
 
-## 🚀 Stack
+##  Stack
 - Cypress 13
 - GitHub Actions (pipeline opcional incluído)
 
-## 📂 Estrutura
+##  Estrutura
 ```
 cypress-login-automation/
 ├─ cypress/
@@ -22,7 +22,7 @@ cypress-login-automation/
 └─ package.json
 ```
 
-## 🛠️ Como rodar
+## Como rodar
 ```bash
 # instalar dependências
 npm install
@@ -44,14 +44,14 @@ BASE_URL=https://www.saucedemo.com QA_USER=standard_user QA_PASS=secret_sauce np
 $env:BASE_URL="https://www.saucedemo.com"; $env:QA_USER="standard_user"; $env:QA_PASS="secret_sauce"; npm run cy:run
 ```
 
-## ✅ Cenários cobertos
+## Cenários cobertos
 - Login com credenciais válidas (sucesso)
 - Login com usuário bloqueado
 - Login com credenciais inválidas (data-driven)
 - Regras de formulário (campos obrigatórios)
 
-## 📦 CI (GitHub Actions)
+## CI (GitHub Actions)
 Um workflow simples está em `.github/workflows/cypress.yml` para rodar os testes a cada push.
 
-## 🔖 Dica
+##  Dica
 Edite `cypress.config.js` para apontar para a sua própria aplicação de login quando desejar.
