@@ -1,41 +1,57 @@
+# Cypress Login Automation
 
-- Cypress Login Automation
+Projeto de automação E2E com **Cypress** para validar cenários de **Login** usando o site público [saucedemo](https://www.saucedemo.com/).
 
-Projeto de automação E2E com Cypress para validar cenários de Login.
+## 🚀 Stack
+- Cypress 13
+- GitHub Actions (pipeline opcional incluído)
 
-- Como rodar localmente
+## 📂 Estrutura
+```
+cypress-login-automation/
+├─ cypress/
+│  ├─ e2e/
+│  │  └─ login.cy.js
+│  ├─ fixtures/
+│  │  └─ users.json
+│  └─ support/
+│     ├─ commands.js
+│     └─ e2e.js
+├─ .github/workflows/cypress.yml
+├─ cypress.config.js
+└─ package.json
+```
 
-    bash
-- instalar dependências
+## 🛠️ Como rodar
+```bash
+# instalar dependências
 npm install
 
-- abrir a interface interativa do Cypress
+# abrir a interface do Cypress
 npm run cy:open
 
-- rodar em modo headless (CI)
+# rodar em modo headless (CI)
 npm run cy:run
+```
 
+### Variáveis de ambiente (opcional)
+Por padrão, o teste usa `standard_user / secret_sauce`. Você pode sobrescrever via env:
+```bash
+# Linux/Mac
+BASE_URL=https://www.saucedemo.com QA_USER=standard_user QA_PASS=secret_sauce npm run cy:run
 
-******** Cenários de Testes em BDD
+# Windows (PowerShell)
+$env:BASE_URL="https://www.saucedemo.com"; $env:QA_USER="standard_user"; $env:QA_PASS="secret_sauce"; npm run cy:run
+```
 
-Cenário: Login válido
+## ✅ Cenários cobertos
+- Login com credenciais válidas (sucesso)
+- Login com usuário bloqueado
+- Login com credenciais inválidas (data-driven)
+- Regras de formulário (campos obrigatórios)
 
-  *Given que estou na página de login
-  *When eu informo email e senha
-  *And clico em entrar
-  *Then devo ver a dashboard autenticada
-  *And devo ver a mensagem "Bem-vindo"
+## 📦 CI (GitHub Actions)
+Um workflow simples está em `.github/workflows/cypress.yml` para rodar os testes a cada push.
 
-Cenário: Login com senha inválida
-  Given que estou na página de login
-  When eu informo email e senha
-  And clico em entrar
-  Then devo ver a mensagem de erro "E-mail ou senha incorretos"
-
-Cenário: Campos obrigatórios
-  Given que estou na página de login
-  When eu clico em entrar sem preencher os campos
-  Then devo ver as mensagens de obrigatoriedade para email e senha
-
-
-
+## 🔖 Dica
+Edite `cypress.config.js` para apontar para a sua própria aplicação de login quando desejar.

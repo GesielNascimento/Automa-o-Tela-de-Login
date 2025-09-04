@@ -1,0 +1,13 @@
+{
+  "name": "cypress-login-automation",
+  "version": "1.0.0",
+  "description": "Projeto de automação E2E com Cypress para validar fluxo de login (exemplo com saucedemo).",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.12.0"
+  }
+}
