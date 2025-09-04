@@ -62,20 +62,21 @@ Edite `cypress.config.js` para apontar para a sua própria aplicação de login 
 
 
   Scenario: Successful login
-    Given I am on the login page
-    When I enter email "aluno@teste.com" and password "senha123"
-    And I click on the login button
-    Then I should be redirected to the dashboard
-    And I should see the message "Welcome"
+    Given estou na página de login
+    When informo o e-mail "aluno@teste.com" e a senha "senha123"
+    And clico no botão de login
+    Then devo ser redirecionado para o painel (dashboard)
+    And devo ver a mensagem "Bem-vindo"
 
   Scenario: Invalid password
-    Given I am on the login page
-    When I enter email "aluno@teste.com" and password "wrongpass"
-    And I click on the login button
-    Then I should see the error message "Invalid email or password"
+    Given estou na página de login
+    When informo o e-mail "aluno@teste.com" e a senha "wrongpass"
+    And clico no botão de login
+    Then devo ver a mensagem de erro "E-mail ou senha incorretos"
 
   Scenario: Required fields validation
-    Given I am on the login page
-    When I click on the login button without filling in the fields
-    Then I should see validation messages for email and password
+    Given estou na página de login
+    When clico no botão de login sem preencher os campos
+    Then devo ver mensagens de validação para e-mail e senha
+
 
