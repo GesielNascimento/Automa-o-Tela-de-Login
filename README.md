@@ -59,7 +59,7 @@ Edite `cypress.config.js` para apontar para a sua própria aplicação de login 
 ##  CENARIO DE TESTE BDD
 
 ```gherkin
-Feature: Login
+
 
   Scenario: Successful login
     Given I am on the login page
