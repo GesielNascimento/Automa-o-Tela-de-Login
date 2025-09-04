@@ -58,9 +58,10 @@ Edite `cypress.config.js` para apontar para a sua própria aplicação de login 
 
 ##  CENARIO DE TESTE BDD
 
-# Feature: Login
+```gherkin
+Feature: Login
 
-Scenario: Successful login
+  Scenario: Successful login
     Given I am on the login page
     When I enter email "aluno@teste.com" and password "senha123"
     And I click on the login button
