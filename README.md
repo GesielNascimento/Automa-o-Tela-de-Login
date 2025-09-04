@@ -53,5 +53,28 @@ $env:BASE_URL="https://www.saucedemo.com"; $env:QA_USER="standard_user"; $env:QA
 ## CI (GitHub Actions)
 Um workflow simples está em `.github/workflows/cypress.yml` para rodar os testes a cada push.
 
-##  Dica
+
 Edite `cypress.config.js` para apontar para a sua própria aplicação de login quando desejar.
+
+##  CENARIO DE TESTE BDD
+
+# Feature: Login
+
+  Scenario: Successful login
+    Given I am on the login page
+    When I enter email "aluno@teste.com" and password "senha123"
+    And I click on the login button
+    Then I should be redirected to the dashboard
+    And I should see the message "Welcome"
+
+  Scenario: Invalid password
+    Given I am on the login page
+    When I enter email "aluno@teste.com" and password "wrongpass"
+    And I click on the login button
+    Then I should see the error message "Invalid email or password"
+
+  Scenario: Required fields validation
+    Given I am on the login page
+    When I click on the login button without filling in the fields
+    Then I should see validation messages for email and password
+
